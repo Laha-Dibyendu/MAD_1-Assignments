@@ -1,0 +1,21 @@
+body{
+    background-color: #fdfdbb;
+}
+div{
+    margin: 20px;
+}
+h5{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    text-align:center;
+}
+a{
+    text-decoration: none;
+    color: #ff0000;
+}
+img{
+    width: 250px;
+    height: 250px;
+}

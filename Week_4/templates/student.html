@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data</title>
+</head>
+<body>
+    <div>
+        <h1>Student Details</h1>
+    </div>
+    <table border = "2" id = "student-details-table">
+        <tr>
+        <th>Student Id</th>
+        <th>Course Id</th>
+        <th>Marks</th>
+        </tr>
+        <tr>
+            {% for data in D %}
+              {% if data["Student id"]== p %}
+              <tr>
+                <td>{{ data["Student id"] }}</td>
+                <td>{{ data["Course id"] }}</td>
+                <td>{{ data["Marks"] }}</td> 
+              
+              </tr>
+              {% endif %}
+            {% endfor %}
+            </tr>
+        <tr>
+            {% set points = [0] -%}
+            {% for single_item in D -%}
+            {% if single_item["Student id"]==p and points.append(points.pop()+ single_item["Marks"]) -%}{% endif %}
+            {% endfor %}
+        <td colspan = "2" style="text-align:center"> Total Marks </td>
+        <td>{{ points[0] }}</td>
+        </tr>
+        </table>
+    <br>
+    <br>
+    <a href="{{url_for('index')}}">Go Back</a>
+
+</body>
+</html>

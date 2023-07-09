@@ -1,0 +1,20 @@
+body{
+    background-color: #fdfdbb;
+}
+div{
+    margin: 20px;
+}
+h1{
+    text-align: center;
+}
+h5{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    text-align:center;
+}
+a{
+    text-decoration: none;
+    color: #ff0000;
+}

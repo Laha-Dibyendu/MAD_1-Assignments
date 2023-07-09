@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Data</title>
+</head>
+<body>
+    <h1>Course Details</h1>
+    <div>
+    <table border = "2" id = "course-details-table">
+        <tr>
+        <th>Average Marks</th>
+        <th>Maximum Marks</th>
+        </tr>
+        <tr>
+            {% set points = [0] -%}
+            {% for single_item in D -%}
+            {% if single_item["Course id"]==p and points.append(points.pop()+ single_item["Marks"]) -%}{% endif %}
+            {% endfor %}
+            {% set point2 = [] -%}
+            {% for single_item in D -%}
+            {% if single_item["Course id"]==p and point2.append(single_item["Marks"]) -%}
+            {% endif %}
+            {% endfor %}
+              <td>{{ points[0]/ point2|length}}</td>
+              <td>{{point2|max}}</td>
+        </tr>
+    </table>
+    </div>
+    <div>
+        <img src="{{url_for('static', filename='pc.png')}}" height="280" width="325" >
+    </div>
+    <br>
+    <a href="{{url_for('index')}}">Go Back</a>
+</body>
+</html>
